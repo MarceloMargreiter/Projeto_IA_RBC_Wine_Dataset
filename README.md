@@ -5,55 +5,58 @@
 
 ## Tecnologias utilizadas
 - Python 3.11+
+- VS Code
 - Pandas
-- Plotly
 - Numpy
-- Seaborn
-- Joblib
-- Dash
-- HTML
-- CSS
+- Streamlit
 - Scikit-learn
-- XGBoost
-- Git/Github
-- Google Cloud
-- Docker
+- Scipy
 
 ## Como executar o projeto
 
-1→ No Promt do VS Code, vá até o diretório dessignado ao projeto, crie e ative o ambiente virtual:
-``` 
-Criar →     python -m venv .venv    (Obs.: Caso já exista, não há necessidade de executar novamente)
+## 1→ No Promt do VS Code, vá até o diretório designado ao projeto, crie e ative o ambiente virtual:
 
-# Windows
-Ativar →    .venv\Scripts\activate
+## Criar  
+*(Obs.: Caso já exista a variável, não há necessidade de executar novamente.)*
+```bash
+python -m venv .venv
+```    
 
-# Linux ou MacOS
-Ativar →    source .venv/bin/activate
+
+## Windows:
+### Ativar 
+```bash
+.venv\Scripts\activate
 ```
 
-2→ Instale os pacotes necessários no ambiente virtual:
+## Linux ou MacOS
+### Ativar    
+```bash
+source .venv/bin/activate
+```
+
+## 2→ Instale os pacotes necessários no ambiente virtual:
 
 ```bash
 pip install -r requirements.txt
 ``` 
 
-3→ Execute o arquivo abaixo para gerar o modelo de previsão e verifique a acurácia do modelo:
+## 3→ Execute o comando abaixo no terminal para gerar o Dashboard Streamlit:
+
 ```bash
-Arquivo = "treina_modelo.py"
+streamlit run main.py
 ```
 
-4→ Execute o programa e clique no link gerado para visualizar localmente:
+## 4→ Execute o programa e clique no link gerado para visualizar localmente:
 ```bash
 Programa = "main.py"
 Link = "http://127.0.0.1:8050/" 
 ```
 
 ## Problemas
-- Alto índice de espera na triagem de pacientes com suspeitas de doenças cardíacas.
-- Falta de entendimento das *features* dos exames no contexto geral.
+- Dificuldades para fazer a comparação de características físico-químicas dos vinhos analisados.
 
 ## Requisitos do negócio
-- Criar um Dashboard para ajudar a prever pacientes com chances de doenças cardíacas.
-- Criar graficos para entender melhor os dados (*features*) sobre o estado de saúde de pessoas com doenças cardíacas.
+- Criar um Dashboard para auxiliar os cientístas a identificar a região de fabricação do Vinho conforme suas características e vinhos mais similares.
+
 - Disponibilizar o dasboard online para interação do cliente (*usuário*).
