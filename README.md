@@ -15,34 +15,33 @@
 
 ## Como executar o projeto
 
-## 1→ No Promt do VS Code, vá até o diretório designado ao projeto, crie e ative o ambiente virtual:
-
-## Criar  
-*(Obs.: Caso já exista a variável, não há necessidade de executar novamente.)*
+### 1→ No Promt do VS Code, vá até o diretório designado ao projeto, crie e ative o ambiente virtual:
+ 
+* ### Criar: 
+    *(Obs.: Caso já exista a variável, não há necessidade de executar novamente.)*
 ```bash
 python -m venv .venv
 ```    
 
+* ### Ativar:
 
-## Windows:
-### Ativar 
+#### **Windows:**  
 ```bash
 .venv\Scripts\activate
 ```
-
-## Linux ou MacOS
-### Ativar    
+   
+#### **Linux ou MacOS:**   
 ```bash
 source .venv/bin/activate
 ```
 
-## 2→ Instale os pacotes necessários no ambiente virtual:
+### 2→ Instale os pacotes necessários no ambiente virtual:
 
 ```bash
 pip install -r requirements.txt
 ``` 
 
-## 3→ Execute o comando abaixo no terminal para gerar o Dashboard Streamlit:
+### 3→ Execute o comando abaixo no terminal para gerar o Dashboard Streamlit:
 
 ```bash
 streamlit run main.py
