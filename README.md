@@ -11,6 +11,7 @@
 - Streamlit
 - Scikit-learn
 - Scipy
+- Os
 
 ## Como executar o projeto
 
@@ -47,16 +48,11 @@ pip install -r requirements.txt
 streamlit run main.py
 ```
 
-## 4→ Execute o programa e clique no link gerado para visualizar localmente:
-```bash
-Programa = "main.py"
-Link = "http://127.0.0.1:8050/" 
-```
 
 ## Problemas
-- Dificuldades para fazer a comparação de características físico-químicas dos vinhos analisados.
+- Dificuldades para fazer a comparação de características físico-químicas dos vinhos analisados, para identificar a possível região de produção.
 
 ## Requisitos do negócio
-- Criar um Dashboard para auxiliar os cientístas a identificar a região de fabricação do Vinho conforme suas características e vinhos mais similares.
+- Criar um Dashboard para auxiliar os cientístas a identificar a região de fabricação do vinho conforme suas características e verificar os vinhos mais similares.
 
 - Disponibilizar o dasboard online para interação do cliente (*usuário*).
