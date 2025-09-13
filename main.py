@@ -13,13 +13,30 @@ st.set_page_config(page_title="Sistema RBC - Vinho Similar", layout="wide")
 # Estilo para tabelas
 st.markdown("""
     <style>
+        /* Melhora o espaço para tabelas */
         table {
             width: 100% !important;
         }
+
+        /* Reduz o espaço do topo da área principal */
+        .block-container {
+            padding-top: 1.5rem;
+            padding-bottom: 0rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+       /* Reduz o espaço no topo da sidebar */
+        div.st-emotion-cache-10p9htt {
+            padding-top: 0rem !important;
+            margin-top: 0rem !important;
+            height: auto !important;
+        }
+            
     </style>
 """, unsafe_allow_html=True)
 
-# Caminho do dataset externo
+# Caminho do dataset externo (caso exista)
 caminho_csv = r"D:\Ciencia de Dados e Inteligencia Artificial\4 Semestre\Inteligencia Artificial\Semana 1 e 2\AA1\Projeto_IA_RBC_Wine_Dataset\load_wine.csv"
 
 # Mapeamento de regiões
@@ -34,7 +51,7 @@ regioes = {
 }
 regioes_invertido = {v: k for k, v in regioes.items()}
 
-# Mapeamento de descrições dos atributos
+# Descrições dos atributos
 descricao_atributos = {
     "alcohol": "Teor alcoólico do vinho",
     "malic_acid": "Quantidade de ácido málico",
@@ -62,7 +79,7 @@ else:
     df = pd.DataFrame(dados.data, columns=dados.feature_names)
     df['target'] = dados.target
 
-# Inicializar estado da sessão
+# Inicializar estado do app
 if "pagina" not in st.session_state:
     st.session_state.pagina = "buscar"
 if "entrada" not in st.session_state:
@@ -72,11 +89,20 @@ if "regiao_sugerida" not in st.session_state:
 if "acuracia" not in st.session_state:
     st.session_state.acuracia = None
 
-st.image("Vinho_garrafa (Custom).png") # st.title("Sistema RBC - Vinho Similar")
+# Cria duas colunas lado a lado para imagem e título
+col1, col2 = st.columns([1, 2])  # Você pode ajustar a proporção como quiser
+
+with col1:
+    st.image("Vinho_garrafa (Custom).png")  # Ajuste o tamanho conforme necessário
+
+with col2:
+    st.title("Sistema RBC - Vinho Similar")
+    st.write("Descubra vinhos semelhantes e a região de origem com base em características físico-químicas.")
+
+
 
 # Sidebar: entrada de dados
-st.sidebar.title("🎯 IA RBC - Identificação da região do Vinho.")
-st.sidebar.header("🧪 Insira os atributos das análises do vinho.")
+st.sidebar.title("Insira os atributos  do vinho analisado.")
 entrada = []
 for atributo in dados.feature_names:
     descricao = descricao_atributos.get(atributo, atributo)
