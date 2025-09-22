@@ -37,7 +37,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Caminho do dataset externo (caso exista)
-caminho_csv = r"D:\Ciencia de Dados e Inteligencia Artificial\4 Semestre\Inteligencia Artificial\Semana 1 e 2\AA1\Projeto_IA_RBC_Wine_Dataset\load_wine.csv"
+caminho_csv = r"load_wine.csv"
 
 # Mapeamento de regiões
 regioes = {
